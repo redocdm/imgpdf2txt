@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image OCR to Text App</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        // JavaScript to update the file label with the selected file name
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileInput = document.getElementById('customFile');
+            fileInput.addEventListener('change', function() {
+                var fileName = fileInput.files[0].name;
+                // Truncate the file name if it's longer than 50 characters
+                if (fileName.length > 50) {
+                    fileName = fileName.substring(0, 47) + '...';
+                }
+                var fileLabel = document.querySelector('.custom-file-label');
+                fileLabel.textContent = fileName;
+            });
+        });
+    </script>
+
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Image OCR to Text App</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" name="file" accept="image/png, image/jpeg" required id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Upload</button>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="alert alert-danger mt-3">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+        {% if text %}
+            <h3 class="mt-4">Recognized Text:</h3>
+            <textarea readonly rows="10" class="form-control">{{ text }}</textarea>
+        {% endif %}
+    </div>
+    <!-- Include Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
