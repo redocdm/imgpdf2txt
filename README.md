@@ -1,6 +1,3 @@
-# imgpdf2txt
-flask python app convert image-pdf to text
-
 # Image and PDF to Text Converter
 
 This web application allows users to upload image files (PNG, JPEG) or PDF files and converts the text content within those files to plain text using OCR (Optical Character Recognition).
@@ -24,7 +21,7 @@ This web application allows users to upload image files (PNG, JPEG) or PDF files
 `python -m venv venv`
 
 `source venv/bin/activate`
-# On Windows, use `venv\Scripts\activate`
+On Windows, use `venv\Scripts\activate`
 
 4. Install the Required Libraries:
 
