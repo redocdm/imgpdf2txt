@@ -20,6 +20,7 @@ This web application allows users to upload image files (PNG, JPEG) or PDF files
 `cd repo`
 
 2. Create a Virtual Environment (optional but recommended):
+
 `python -m venv venv`
 
 `source venv/bin/activate`
