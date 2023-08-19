@@ -16,10 +16,12 @@ This web application allows users to upload image files (PNG, JPEG) or PDF files
 ### 1. Clone the Repository:
 
 `git clone https://github.com/redocdm/imgpdf2txt.git`
+
 `cd repo`
 
 2. Create a Virtual Environment (optional but recommended):
 `python -m venv venv`
+
 `source venv/bin/activate`
 # On Windows, use `venv\Scripts\activate`
 
